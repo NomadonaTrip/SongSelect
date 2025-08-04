@@ -155,7 +155,8 @@ def main():
         uploaded_file = st.file_uploader("Upload your songs CSV file", type=['csv'])
 
         # Alternative: use a default file path
-        csv_file_path = st.text_input("Or enter CSV file path:", value="worship_songs.csv")
+        # csv_file_path = st.text_input("Or enter CSV file path:", value="worship_songs.csv")
+        csv_file_path = "songs_list.csv"
 
     # Load the database
     df = None
@@ -164,7 +165,7 @@ def main():
         st.success(f"✅ Loaded {len(df)} songs from uploaded file!")
         validate_columns(df)
     elif csv_file_path and os.path.exists(csv_file_path):
-        df = load_songs_database("songs_list.csv")
+        df = load_songs_database(csv_file_path)
         if df is not None:
             st.success(f"✅ Loaded {len(df)} songs from {csv_file_path}!")
             validate_columns(df)
@@ -210,7 +211,7 @@ def main():
             st.dataframe(filtered_df.head(10))
 
         # Song selection
-        st.header("🎲 Random Song Selection")
+        st.header("🎲 Song Selection")
 
         col1, col2 = st.columns([2, 1])
         with col1:
