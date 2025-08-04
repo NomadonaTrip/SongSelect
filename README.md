@@ -1,0 +1,1 @@
+Streamlit tool to help worship leaders brainstorm worship set lists by parsing through a csv database of songs. Currently hardcoded to Lifehouse church.<img width="1917" height="939" alt="image" src="https://github.com/user-attachments/assets/aec8b731-c7e5-4cc5-9736-133c92dc1fff" />
