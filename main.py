@@ -164,7 +164,7 @@ def main():
         st.success(f"✅ Loaded {len(df)} songs from uploaded file!")
         validate_columns(df)
     elif csv_file_path and os.path.exists(csv_file_path):
-        df = load_songs_database(csv_file_path)
+        df = load_songs_database("songs_list.csv")
         if df is not None:
             st.success(f"✅ Loaded {len(df)} songs from {csv_file_path}!")
             validate_columns(df)
